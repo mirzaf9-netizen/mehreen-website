@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dr. Mehreen Fatima — Developmental Psychologist">
 <meta property="og:description" content="Studying how children understand, share, and respond to each other's emotions — and building better tools to measure empathy in neurodivergent children.">
-<meta property="og:image" content="images/mehreen-hero.png">
+<meta property="og:image" content="https://mehreenfatima.in/images/mehreen-hero.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dr. Mehreen Fatima — Developmental Psychologist">
 <meta name="twitter:description" content="Empathy & Neurodiversity Researcher | Assistant Professor at Azim Premji University">
@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Canonical URL — UPDATE with your actual domain -->
-<link rel="canonical" href="https://mehreenfatima.com">
+<link rel="canonical" href="https://mehreenfatima.in">
 <style>
 /* ═══════════════════════════════════════════
    DESIGN SYSTEM
@@ -109,14 +109,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: var(--primary);
+  color: #fff;
   letter-spacing: 0.02em;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
 }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-logo:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(74, 53, 102, 0.3);
+}
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
 .nav-links a {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -126,15 +138,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav-links a::after {
   content: '';
-  position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1.5px;
+  position: absolute; bottom: -6px; left: 0;
+  width: 0; height: 2px;
   background: var(--accent);
+  border-radius: 2px;
   transition: width 0.4s var(--ease-out);
 }
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { width: 100%; }
-.nav-links a.active { color: var(--primary); }
-.nav-links a.active::after { width: 100%; background: var(--primary); }
+.nav-links a.active { color: var(--primary); font-weight: 700; }
+.nav-links a.active::after { width: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); }
 .nav-links a.btn-primary { color: #fff; }
 .nav-links a.btn-primary:hover { color: #fff; }
 .nav-links a.btn-primary::after { display: none; }
@@ -155,11 +168,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .hero-grid {
   position: relative; z-index: 2;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -179,7 +192,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
   filter: drop-shadow(0 20px 40px rgba(28, 27, 41, 0.12));
   animation: heroPhotoIn 1.2s var(--ease-out) 0.6s both;
 }
@@ -193,8 +206,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -48%);
-  width: min(80%, 520px);
-  height: min(80%, 520px);
+  width: min(85%, 620px);
+  height: min(85%, 620px);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -281,32 +294,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .hero-eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 1.75rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
   opacity: 0;
   animation: heroFadeUp 1s var(--ease-out) 0.3s forwards;
 }
-.hero-eyebrow::after {
-  content: '';
-  width: 32px; height: 1px;
-  background: var(--accent);
-  opacity: 0.5;
-}
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-size: clamp(3.4rem, 6.5vw, 6rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   opacity: 0;
   animation: heroNameReveal 1.2s var(--ease-out) 0.5s forwards;
 }
@@ -323,23 +328,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .hero-subtitle {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-  font-weight: 400;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 500;
   font-style: italic;
   color: var(--primary-mid);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.4;
   opacity: 0;
   animation: heroFadeUp 1s var(--ease-out) 0.7s forwards;
 }
 .hero-tagline {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-muted);
-  max-width: 500px;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--text);
+  max-width: 560px;
   margin-bottom: 2.5rem;
   opacity: 0;
   animation: heroFadeUp 1s var(--ease-out) 0.9s forwards;
 }
+.hero-tagline strong {
+  font-weight: 600;
+  color: var(--primary);
+}
+.hero-tagline--mobile { display: none; }
 .hero-ctas {
   display: flex;
   gap: 1rem;
@@ -418,11 +429,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-bottom: 1px solid var(--border);
 }
 .stats-inner {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
 }
 .stat-item { text-align: center; }
 .stat-number {
@@ -458,7 +469,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin: 0 auto;
 }
 .section-label {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -478,9 +489,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--primary);
 }
 .section-intro {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
-  max-width: 620px;
+  max-width: 660px;
   line-height: 1.8;
 }
 .section-alt { background: var(--bg-alt); }
@@ -490,66 +501,85 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ═══════════════════════════════════════════ */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3.5rem;
   align-items: start;
   margin-top: 3rem;
 }
 .about-text p {
-  font-size: 1rem;
-  line-height: 1.85;
+  font-size: 1.08rem;
+  line-height: 1.9;
   color: var(--text);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
 }
-.about-text p:last-child { margin-bottom: 0; }
 .about-aside {
   position: relative;
+  position: sticky;
+  top: 100px;
 }
-.about-photo-placeholder {
-  aspect-ratio: 3/4;
-  background: linear-gradient(135deg, var(--lavender) 0%, var(--lavender-deep) 100%);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.about-book-frame {
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 25px 60px rgba(28, 27, 41, 0.18);
+  aspect-ratio: 3/4;
 }
-.about-photo-placeholder::before {
-  content: '';
-  position: absolute; inset: 8px;
-  border: 1px solid rgba(74, 53, 102, 0.15);
-  border-radius: 12px;
+.about-book-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s var(--ease-out);
 }
-.photo-text {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--primary);
-  opacity: 0.5;
-  font-style: italic;
+.about-book-frame:hover img {
+  transform: scale(1.04);
 }
 .about-card {
   position: absolute;
-  bottom: -1.5rem; right: -1.5rem;
+  bottom: -1.5rem; left: -1.5rem;
   background: var(--card);
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(28, 27, 41, 0.08);
+  padding: 1.25rem 1.75rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(28, 27, 41, 0.12);
   border: 1px solid var(--border);
 }
 .about-card-label {
   font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: var(--accent);
   margin-bottom: 0.3rem;
 }
 .about-card-value {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-style: italic;
   color: var(--primary);
+}
+.about-quote {
+  position: relative;
+  margin-top: 2rem;
+  padding: 2rem 2.25rem;
+  background: linear-gradient(135deg, var(--lavender) 0%, rgba(213, 200, 234, 0.4) 100%);
+  border-radius: 18px;
+  border-left: 4px solid var(--accent);
+}
+.about-quote-mark {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 0.7;
+  color: var(--accent);
+  opacity: 0.4;
+  margin-bottom: -0.5rem;
+}
+.about-quote p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--primary);
+  margin: 0;
 }
 
 /* ═══════════════════════════════════════════
@@ -596,13 +626,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .research-card h3 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--text);
 }
 .research-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.7;
 }
@@ -716,8 +746,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: 0;
 }
 .pub-tab {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.8rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-muted);
   border-bottom: 2px solid transparent;
@@ -732,7 +762,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .pub-list { list-style: none; }
 .pub-item {
-  padding: 1.5rem 0;
+  padding: 1.75rem 0;
   border-bottom: 1px solid var(--border);
   transition: all 0.3s;
 }
@@ -740,26 +770,42 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pub-item:hover { padding-left: 0.5rem; }
 .pub-year {
   font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--accent);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 .pub-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
 }
-.pub-authors {
+.pub-title a {
+  color: var(--text);
+  transition: color 0.3s var(--ease-out);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.pub-title a:hover { color: var(--primary); }
+.pub-title a::after {
+  content: '↗';
   font-size: 0.85rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+}
+.pub-title a:hover::after { opacity: 1; }
+.pub-authors {
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 .pub-authors strong { color: var(--text); font-weight: 600; }
 .pub-journal {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--text-light);
   font-style: italic;
 }
@@ -767,11 +813,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;
 }
 .pub-tag {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 100px;
   background: var(--lavender);
   color: var(--primary);
@@ -792,47 +838,70 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 2rem;
   margin-top: 3rem;
 }
+.teaching-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
 .teaching-block {
-  padding: 2rem;
+  padding: 2.25rem 2rem;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  transition: all 0.4s var(--ease-out);
+  border-radius: 18px;
+  transition: all 0.5s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.teaching-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
 }
 .teaching-block:hover {
-  box-shadow: 0 8px 30px rgba(28, 27, 41, 0.06);
+  box-shadow: 0 16px 45px rgba(74, 53, 102, 0.1);
+  transform: translateY(-4px);
+  border-color: var(--primary-light);
 }
+.teaching-block:hover::before { transform: scaleX(1); }
 .teaching-institution {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
+  color: var(--text);
 }
 .teaching-role {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
 }
 .teaching-courses {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 .teaching-courses li {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
-  padding-left: 1rem;
+  padding-left: 1.3rem;
   position: relative;
+  line-height: 1.5;
 }
 .teaching-courses li::before {
   content: '';
   position: absolute;
-  left: 0; top: 0.55rem;
-  width: 5px; height: 5px;
+  left: 0; top: 0.6rem;
+  width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--primary-light);
+  background: var(--accent);
 }
 
 /* ═══════════════════════════════════════════
@@ -842,48 +911,72 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1.25rem;
 }
 .award-item {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 90px 1fr;
   gap: 2rem;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid var(--border);
-  align-items: start;
-  transition: all 0.3s;
+  padding: 1.75rem 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  align-items: center;
+  transition: all 0.5s var(--ease-out);
+  position: relative;
+  overflow: hidden;
 }
-.award-item:first-child { border-top: 1px solid var(--border); }
-.award-item:hover { padding-left: 0.5rem; }
+.award-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s var(--ease-out);
+}
+.award-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 35px rgba(74, 53, 102, 0.1);
+  border-color: var(--primary-light);
+}
+.award-item:hover::before { transform: scaleY(1); }
 .award-year {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--primary-light);
-  line-height: 1.2;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+  border-radius: 12px;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  letter-spacing: -0.02em;
 }
 .award-content h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  color: var(--text);
 }
 .award-content p {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
 .award-badge {
   display: inline-block;
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
-  background: var(--accent);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
+  background: linear-gradient(135deg, var(--accent), var(--coral));
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
   margin-left: 0.5rem;
   vertical-align: middle;
 }
@@ -1198,44 +1291,108 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
+
+/* ── Tablet ── */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .hero-grid { gap: 1.5rem; }
+  .hero-name { font-size: clamp(3rem, 6vw, 4.5rem); }
+  .stats-inner { gap: 1rem; }
+  .cta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Mobile & small tablet ── */
 @media (max-width: 900px) {
   .nav { padding: 1rem 1.5rem; }
   .nav.scrolled { padding: 0.7rem 1.5rem; }
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-  .hero { padding: 6rem 1.5rem 2rem; }
-  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
-  .hero-photo-wrap { order: -1; }
-  .hero-photo { max-width: 320px; }
-  .hero-sphere { width: 300px; height: 300px; }
-  .hero-ring { width: 250px; height: 250px; }
-  .hero-ring-2 { width: 380px; height: 380px; }
-  .hero-name { font-size: clamp(2.4rem, 8vw, 3.5rem); }
-  .hero-ctas { justify-content: center; }
-  .hero-eyebrow::after { display: none; }
+
+  /* HERO — reorder: name/designation → photo → tagline */
+  .hero {
+    padding: 5.5rem 1.5rem 3rem;
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .hero-content { order: 1; display: flex; flex-direction: column; }
+  .hero-photo-wrap { order: 2; }
+  .hero-tagline--mobile {
+    order: 3;
+    display: block;
+    margin: 1.5rem auto 0;
+    text-align: center;
+  }
+  /* hide the in-content tagline on mobile, show mobile one below photo */
+  .hero-content .hero-tagline { display: none; }
+  .hero-eyebrow { margin-bottom: 1.25rem; }
+  .hero-eyebrow br.brk { display: none; }
+  .hero-subtitle br.brk { display: none; }
+  .hero-name { font-size: clamp(2.6rem, 9vw, 3.8rem); margin-bottom: 1rem; }
+  .hero-subtitle { margin-bottom: 0; }
+  .hero-photo { max-width: 340px; }
+  .hero-sphere { width: 320px; height: 320px; }
+  .hero-ring { width: 270px; height: 270px; }
+  .hero-ring-2 { width: 400px; height: 400px; }
+  .hero-tagline--mobile { max-width: 460px; font-size: 1.1rem; }
   .hero-scroll { display: none; }
+
   .section { padding: 4.5rem 1.5rem; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .stats { padding: 2.5rem 1.5rem; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1.5rem; }
+
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-aside { order: -1; }
-  .about-photo-placeholder { aspect-ratio: 16/9; }
-  .about-card { bottom: -1rem; right: 1rem; }
+  .about-aside { position: static; order: -1; max-width: 300px; margin: 0 auto 1.5rem; }
+  .about-card { left: auto; right: 1rem; bottom: -1rem; }
+  .about-quote { padding: 1.75rem; }
+  .about-quote p { font-size: 1.15rem; }
+
   .featured-grid { grid-template-columns: 1fr; }
-  .teaching-grid { grid-template-columns: 1fr; }
+  .teaching-grid, .teaching-grid--3 { grid-template-columns: 1fr; }
   .service-grid { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr 1fr; }
-  .award-item { grid-template-columns: 70px 1fr; gap: 1rem; }
+  .award-item { grid-template-columns: 64px 1fr; gap: 1.25rem; padding: 1.5rem; }
+  .award-year { font-size: 1.5rem; padding: 0.7rem 0.4rem; }
   .contact-section { padding: 4.5rem 1.5rem; }
+  .contact-links { gap: 0.75rem; }
 }
+
+/* ── Phones ── */
 @media (max-width: 600px) {
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .stat-number { font-size: 2.2rem; }
-  .hero-name { font-size: 2.2rem; }
-  .hero-subtitle { font-size: 1rem; }
-  .hero-photo { max-width: 260px; }
-  .hero-eyebrow::after { display: none; }
+  .hero { padding: 5rem 1.25rem 2.5rem; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+  .stat-number { font-size: 2.4rem; }
+  .stat-label { font-size: 0.68rem; }
+  .hero-name { font-size: clamp(2.4rem, 11vw, 3.2rem); }
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-tagline--mobile { font-size: 1.05rem; }
+  .hero-photo { max-width: 280px; }
+  .hero-sphere { width: 270px; height: 270px; }
+  .hero-ring { width: 220px; height: 220px; }
+  .hero-ring-2 { width: 330px; height: 330px; }
   .research-grid { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .section-title br { display: none; }
+  .pub-tabs { flex-wrap: wrap; }
+  .pub-title { font-size: 1.2rem; }
+  .about-card { right: 0.5rem; padding: 1rem 1.25rem; }
+  .award-item { grid-template-columns: 56px 1fr; gap: 1rem; padding: 1.25rem; }
+  .award-year { font-size: 1.3rem; }
+  .award-content h3 { font-size: 1.15rem; }
+}
+
+/* ── Very small phones ── */
+@media (max-width: 380px) {
+  .hero-name { font-size: 2.2rem; }
+  .stats-inner { gap: 1.25rem 0.75rem; }
+  .stat-number { font-size: 2rem; }
 }
 
 /* ═══════════════════════════════════════════
@@ -1262,7 +1419,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
      NAVIGATION
      ═══════════════════════════════════════════ -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">Mehreen Fatima</a>
+  <a href="#" class="nav-logo">MF</a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#research">Research</a>
@@ -1270,7 +1427,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#recognitions">Recognitions</a>
-    <a href="#collaborate" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book a Consultation</a>
+    <a href="#collaborate" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Work With Me</a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -1304,20 +1461,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="hero-grid">
     <!-- Text Side -->
     <div class="hero-content">
-      <div class="hero-eyebrow">Assistant Professor · Azim Premji University</div>
-      <h1 class="hero-name">Dr. Mehreen<br><strong>Fatima</strong></h1>
-      <p class="hero-subtitle">Developmental Psychologist · Empathy &amp; Neurodiversity Researcher</p>
-      <p class="hero-tagline">Studying how children understand, share, and respond to each other's emotions — and building better tools to measure empathy in neurodivergent children.</p>
-      <div class="hero-ctas">
-        <a href="#research" class="btn btn-primary">
-          Explore Research
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
-        </a>
-        <a href="#" class="btn btn-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          Download CV
-        </a>
-      </div>
+      <div class="hero-eyebrow">Incoming Fulbright-Nehru Postdoctoral <br class="brk">Research Fellow · University of Virginia</div>
+      <h1 class="hero-name">Dr. <strong>Mehreen</strong><br>Fatima</h1>
+      <p class="hero-subtitle">Child &amp; Developmental Psychologist · <br class="brk">Neurodiversity Researcher</p>
+      <p class="hero-tagline"><strong>I study how children think, feel, and connect with others</strong> — with a focus on social cognition in neurodiversity. My goal is simple: research that informs practice, and practice that changes lives.</p>
     </div>
 
     <!-- Photo Side -->
@@ -1328,6 +1475,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <img class="hero-photo" src="images/mehreen-hero.png" alt="Dr. Mehreen Fatima" />
     </div>
   </div>
+
+  <!-- Mobile-only tagline (shown below photo on small screens) -->
+  <p class="hero-tagline hero-tagline--mobile"><strong>I study how children think, feel, and connect with others</strong> — with a focus on social cognition in neurodiversity. My goal is simple: research that informs practice, and practice that changes lives.</p>
 
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -1341,20 +1491,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <div class="stats">
   <div class="stats-inner">
     <div class="stat-item reveal">
-      <div class="stat-number"><span data-count="9">0</span><span class="suffix">+</span></div>
+      <div class="stat-number"><span data-count="10">0</span></div>
       <div class="stat-label">Publications</div>
     </div>
     <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-number"><span data-count="62">0</span><span class="suffix">+</span></div>
+      <div class="stat-number"><span data-count="85">0</span><span class="suffix">+</span></div>
       <div class="stat-label">Citations</div>
     </div>
     <div class="stat-item reveal reveal-delay-2">
-      <div class="stat-number"><span data-count="7">0</span></div>
-      <div class="stat-label">Countries Presented</div>
+      <div class="stat-number"><span data-count="10">0</span></div>
+      <div class="stat-label">Conference Papers</div>
     </div>
     <div class="stat-item reveal reveal-delay-3">
-      <div class="stat-number"><span data-count="7">0</span></div>
+      <div class="stat-number"><span data-count="8">0</span><span class="suffix">+</span></div>
       <div class="stat-label">Dissertations Supervised</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-4">
+      <div class="stat-number"><span data-count="30">0</span><span class="suffix">+</span></div>
+      <div class="stat-label">Talks &amp; Workshops</div>
     </div>
   </div>
 </div>
@@ -1365,21 +1519,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="section" id="about">
   <div class="section-container">
     <div class="section-label reveal">About</div>
-    <h2 class="section-title reveal">Where <em>empathy</em> meets<br>developmental science</h2>
+    <h2 class="section-title reveal">Where <em>empathy</em> meets <br>developmental science</h2>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I am a developmental psychologist and Assistant Professor at Azim Premji University, Bhopal, where I teach courses on child development, field research, and early childhood education.</p>
-        <p>My doctoral work at the University of Delhi, under Prof. Nandita Babu, focused on developing animated video-based measures of cognitive and affective empathy in children — both neurotypical and neurodivergent, including children with autism spectrum disorder, ADHD, and intellectual disability.</p>
-        <p>My broader research interests span theory of mind, moral reasoning, and social cognition across the developmental spectrum, with a particular commitment to neurodiversity-affirming approaches. I also bring methodological expertise in systematic reviews and meta-analysis to the field.</p>
-        <p>I am currently writing my first book — <em>Empathy Spectrum: Understanding Connections in a Diverse World</em> — under contract with John Wiley &amp; Sons.</p>
+        <p>I've always cared more about <em>how</em> someone came to feel or think something than what they think. That instinct was <strong>empathy</strong>, long before I had a word for it — and it became the question my career is built around.</p>
+        <p>I am a child and developmental psychologist and an incoming Fulbright-Nehru Postdoctoral Research Fellow at the University of Virginia, USA. I've previously taught child development and research methods as an Assistant Professor at SGT University, Gurugram, and Azim Premji University, Bhopal.</p>
+        <p>My doctoral work at the University of Delhi, under Prof. Nandita Babu, developed animated video-based measures of empathy in children — neurotypical and neurodivergent, with a focus on autism spectrum disorder. My broader research sits in social cognition and neurodiversity-affirming practice — the belief that different does not mean deficient.</p>
+        <p>I'm currently writing my first book, <em>The Empathy Spectrum: Understanding Connections in a Diverse World</em>, under contract with John Wiley &amp; Sons.</p>
+        <div class="about-quote reveal">
+          <div class="about-quote-mark">"</div>
+          <p>Empathy has never stayed on the page for me. It's the same instinct that sends me looking for the story behind a child's silence, that shapes how I teach and mentor, and that quietly sits underneath every dataset I analyse.</p>
+        </div>
       </div>
       <div class="about-aside reveal reveal-delay-2">
-        <div class="about-photo-placeholder">
-          <span class="photo-text">Photo</span>
+        <div class="about-book-frame">
+          <img src="images/empathy-book.jpg" alt="The Empathy Spectrum — forthcoming book by Dr. Mehreen Fatima" />
         </div>
         <div class="about-card">
-          <div class="about-card-label">Forthcoming</div>
-          <div class="about-card-value">Book with Wiley &amp; Sons</div>
+          <div class="about-card-label">Forthcoming · Wiley &amp; Sons</div>
+          <div class="about-card-value">The Empathy Spectrum</div>
         </div>
       </div>
     </div>
@@ -1392,8 +1550,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="section section-alt" id="research">
   <div class="section-container">
     <div class="section-label reveal">Research Interests</div>
-    <h2 class="section-title reveal">Mapping the landscape of<br><em>social cognition</em> in children</h2>
-    <p class="section-intro reveal">My research sits at the intersection of developmental, cognitive, and social psychology — investigating how children develop the capacity for empathy, and what happens when that development follows a different path.</p>
+    <h2 class="section-title reveal">Mapping the landscape of <br><em>social cognition</em> in children</h2>
+    <p class="section-intro reveal">My research sits at the intersection of child, developmental, and cognitive psychology — investigating how children develop the capacity for different socio-cognitive abilities, and what happens when that development follows a different path.</p>
 
     <div class="research-grid">
       <div class="research-card reveal">
@@ -1402,9 +1560,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p>Understanding how cognitive and affective empathy develop in children with ASD, ADHD, and intellectual disability — and designing interventions to support empathy growth.</p>
       </div>
       <div class="research-card reveal reveal-delay-1">
-        <div class="research-icon">🎬</div>
-        <h3>Measurement Innovation</h3>
-        <p>Developing animated, video-based tasks to assess empathy in young children — moving beyond parent-report toward more ecologically valid, child-friendly measures.</p>
+        <div class="research-icon">💬</div>
+        <h3>Communication in Autism Spectrum Disorder</h3>
+        <p>Exploring communication support practices in children with autism spectrum disorder by adapting frameworks from neurodiversity-affirming contexts.</p>
       </div>
       <div class="research-card reveal reveal-delay-2">
         <div class="research-icon">⚖️</div>
@@ -1412,11 +1570,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p>Investigating the developmental links between children's understanding of others' mental states and their capacity for moral evaluation of intentional versus accidental harm.</p>
       </div>
       <div class="research-card reveal reveal-delay-3">
+        <div class="research-icon">🎬</div>
+        <h3>Measurement Innovations</h3>
+        <p>Developing animated, video-based tasks to assess empathy in young children — moving beyond parent-report toward more ecologically valid, child-friendly measures.</p>
+      </div>
+      <div class="research-card reveal reveal-delay-4">
         <div class="research-icon">📊</div>
         <h3>Systematic Reviews &amp; Meta-Analysis</h3>
         <p>Synthesizing evidence across studies to map the landscape of empathy research in autism and related domains, with published meta-analytic work in Q1 journals.</p>
       </div>
-      <div class="research-card reveal reveal-delay-4">
+      <div class="research-card reveal reveal-delay-5">
         <div class="research-icon">👨‍👩‍👧</div>
         <h3>Parenting &amp; Social Context</h3>
         <p>Exploring how family dynamics and peer relationships shape adolescent development in the Indian context — including parenting during COVID-19 and across neurodiversity.</p>
@@ -1431,10 +1594,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="section" id="work">
   <div class="section-container">
     <div class="section-label reveal">Featured Work</div>
-    <h2 class="section-title reveal">Selected highlights from<br><em>research &amp; writing</em></h2>
+    <h2 class="section-title reveal">Selected highlights from <br><em>research &amp; writing</em></h2>
 
     <div class="featured-grid">
-      <div class="featured-card reveal">
+      <a href="https://link.springer.com/article/10.1007/s40489-023-00364-8" target="_blank" rel="noopener" class="featured-card reveal">
         <div class="featured-card-image">
           <div class="feat-shape feat-shape-1"></div>
           <div class="feat-shape feat-shape-2"></div>
@@ -1446,7 +1609,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <p>A comprehensive quantitative synthesis of research on empathy in autism spectrum disorder, examining how age, culture, and measurement type shape findings across studies.</p>
           <span class="featured-card-tag">Q1 Journal · IF 3.8 — View Paper</span>
         </div>
-      </div>
+      </a>
 
       <div class="featured-card reveal reveal-delay-1">
         <div class="featured-card-image">
@@ -1456,25 +1619,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <span class="featured-card-image-label">PhD Research</span>
         </div>
         <div class="featured-card-body">
-          <h3>Animated Video-Based Empathy Measure</h3>
-          <p>A novel assessment tool using animated scenarios to measure cognitive and affective empathy in young children — designed to be engaging and accessible for neurodivergent participants.</p>
-          <span class="featured-card-tag">Original Instrument — Learn More</span>
+          <h3>Animated Video-Based Empathy Task</h3>
+          <p>The development of a novel animated, video-based task to assess empathy in neurotypical and neurodivergent children — the methodological core of my doctoral research.</p>
+          <span class="featured-card-tag">Original Instrument</span>
         </div>
       </div>
 
-      <div class="featured-card reveal reveal-delay-2">
+      <a href="https://www.amazon.com/-/he/Mehreen-Fatima/dp/1394446918" target="_blank" rel="noopener" class="featured-card reveal reveal-delay-2">
         <div class="featured-card-image">
           <div class="feat-shape feat-shape-1"></div>
           <div class="feat-shape feat-shape-2"></div>
           <div class="feat-shape feat-shape-3"></div>
-          <span class="featured-card-image-label">Forthcoming Book</span>
+          <span class="featured-card-image-label">New Book</span>
         </div>
         <div class="featured-card-body">
-          <h3>Empathy Spectrum</h3>
-          <p>Understanding Connections in a Diverse World — a forthcoming book with John Wiley &amp; Sons exploring empathy across neurotypes, cultures, and human contexts.</p>
-          <span class="featured-card-tag">Wiley &amp; Sons — Coming Soon</span>
+          <h3>The Empathy Spectrum</h3>
+          <p>Understanding Connections in a Diverse World — my forthcoming book with John Wiley &amp; Sons, exploring empathy across neurotypes, cultures, and human contexts.</p>
+          <span class="featured-card-tag">Wiley &amp; Sons — Pre-order Now</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1498,25 +1661,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <ul class="pub-list">
         <li class="pub-item reveal">
           <div class="pub-year">2026</div>
-          <div class="pub-title">Beyond Numbers: Bridging Statistical Significance and Clinical Relevance in Healthcare Research</div>
+          <div class="pub-title"><a href="https://www.ovid.com/jnls/jcbsr/fulltext/10.4103/jcbsr.jcbsr_45_26~contemporary-questions-interdisciplinary-perspectives-an" target="_blank" rel="noopener">Contemporary Questions, Interdisciplinary Perspectives: An Editorial Note</a></div>
+          <div class="pub-authors"><strong>Fatima, M.</strong></div>
+          <div class="pub-journal">Journal of Contemporary Behavioural and Social Research, 2(1), 1–2.</div>
+        </li>
+        <li class="pub-item reveal">
+          <div class="pub-year">2026</div>
+          <div class="pub-title"><a href="https://www.ovid.com/jnls/jcbsr/fulltext/10.4103/jcbsr.jcbsr_33_25~beyond-numbers-bridging-statistical-significance-and" target="_blank" rel="noopener">Beyond Numbers: Bridging Statistical Significance and Clinical Relevance in Healthcare Research</a></div>
           <div class="pub-authors">Singh, M., Khan, W., &amp; <strong>Fatima, M.</strong></div>
           <div class="pub-journal">Journal of Contemporary Behavioural and Social Research, 1(2), 79–84. Wolters Kluwer.</div>
         </li>
         <li class="pub-item reveal">
           <div class="pub-year">2025</div>
-          <div class="pub-title">Intercultural Sensitivity and Attitude towards Refugees in Young Indian Adults</div>
+          <div class="pub-title"><a href="https://www.ovid.com/jnls/jcbsr/fulltext/10.4103/jcbsr.jcbsr_5_25~intercultural-sensitivity-and-attitude-towards-refugees-in" target="_blank" rel="noopener">Intercultural Sensitivity and Attitude towards Refugees in Young Indian Adults</a></div>
           <div class="pub-authors">Srivastava, U., <strong>Fatima, M.*</strong>, Sheikh, I., &amp; Babu, N.</div>
           <div class="pub-journal">Journal of Contemporary Behavioural and Social Research, 1(1), 32–39. Wolters Kluwer.</div>
         </li>
         <li class="pub-item reveal">
           <div class="pub-year">2024</div>
-          <div class="pub-title">Dynamics of Peer Relationships among Adolescents in India — A Qualitative Inquiry</div>
+          <div class="pub-title"><a href="https://www.researchgate.net/profile/Namita-Narula/publication/383876557_Dynamics_of_Peer_Relationships_among_Adolescents_in_India_-A_Qualitative_Inquiry/links/66df4fb6bd20173667c41aff/Dynamics-of-Peer-Relationships-among-Adolescents-in-India-A-Qualitative-Inquiry.pdf" target="_blank" rel="noopener">Dynamics of Peer Relationships among Adolescents in India — A Qualitative Inquiry</a></div>
           <div class="pub-authors">Narula, N., Babu, N., &amp; <strong>Fatima, M.</strong></div>
           <div class="pub-journal">Journal of the Indian Academy of Applied Psychology, Special Issue, 330–340.</div>
         </li>
         <li class="pub-item reveal">
           <div class="pub-year">2024</div>
-          <div class="pub-title">The Dynamic Nature of Parenting Practices: A Qualitative Enquiry of Parenting Adolescents during COVID-19</div>
+          <div class="pub-title"><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1309786/full" target="_blank" rel="noopener">The Dynamic Nature of Parenting Practices: A Qualitative Enquiry of Parenting Adolescents during COVID-19</a></div>
           <div class="pub-authors">Babu, N., <strong>Fatima, M.*</strong>, &amp; Arora, M.</div>
           <div class="pub-journal">Frontiers in Psychology (Sec. Developmental Psychology), 15:1309786.</div>
           <div class="pub-tags">
@@ -1526,7 +1695,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </li>
         <li class="pub-item reveal">
           <div class="pub-year">2023</div>
-          <div class="pub-title">Cognitive and Affective Empathy in Autism Spectrum Disorders: A Meta-analysis</div>
+          <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s40489-023-00364-8" target="_blank" rel="noopener">Cognitive and Affective Empathy in Autism Spectrum Disorders: A Meta-analysis</a></div>
           <div class="pub-authors"><strong>Fatima, M.*</strong> &amp; Babu, N.</div>
           <div class="pub-journal">Review Journal of Autism and Developmental Disorders.</div>
           <div class="pub-tags">
@@ -1536,7 +1705,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </li>
         <li class="pub-item reveal">
           <div class="pub-year">2023</div>
-          <div class="pub-title">Theory of Mind in Relation to Moral Evaluation of Intentional and Accidental Harm Behaviour</div>
+          <div class="pub-title"><a href="https://www.researchgate.net/publication/373140040_Theory_of_Mind_in_Relation_to_Moral_Evaluation_of_Intentional_and_Accidental_Harm_Behaviour" target="_blank" rel="noopener">Theory of Mind in Relation to Moral Evaluation of Intentional and Accidental Harm Behaviour</a></div>
           <div class="pub-authors"><strong>Fatima, M.*</strong> &amp; Babu, N.</div>
           <div class="pub-journal">Journal of the Indian Academy of Applied Psychology, 49(2), 255–264.</div>
         </li>
@@ -1548,13 +1717,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <ul class="pub-list">
         <li class="pub-item reveal">
           <div class="pub-year">2025</div>
-          <div class="pub-title">Empathy and Its Development</div>
+          <div class="pub-title"><a href="https://www.researchgate.net/publication/392810347_Empathy_and_Its_Development" target="_blank" rel="noopener">Empathy and Its Development</a></div>
           <div class="pub-authors">Babu, N. &amp; <strong>Fatima, M.</strong></div>
           <div class="pub-journal">In Handbook of Positive Psychology and Indian Thought Systems. Springer, Singapore.</div>
         </li>
         <li class="pub-item reveal">
           <div class="pub-year">2022</div>
-          <div class="pub-title">Adolescent Health and Well-Being: Issues, Challenges, and Current Status in India</div>
+          <div class="pub-title"><a href="https://psycnet.apa.org/record/2022-63042-007" target="_blank" rel="noopener">Adolescent Health and Well-Being: Issues, Challenges, and Current Status in India</a></div>
           <div class="pub-authors"><strong>Fatima, M.</strong> &amp; Babu, N.</div>
           <div class="pub-journal">In Handbook of Health and Well-Being. Springer, Singapore.</div>
         </li>
@@ -1610,13 +1779,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="section" id="teaching">
   <div class="section-container">
     <div class="section-label reveal">Teaching</div>
-    <h2 class="section-title reveal">Courses across <em>four levels</em><br>of psychology education</h2>
-    <p class="section-intro reveal">I teach across undergraduate, postgraduate, doctoral, and teacher education levels — translating complex psychological concepts into engaging, research-informed classroom discussions.</p>
+    <h2 class="section-title reveal">Courses across <em>three levels</em> <br>of psychology education</h2>
+    <p class="section-intro reveal">I teach across undergraduate, postgraduate, and doctoral levels — translating complex psychological concepts into engaging, research-informed classroom discussions.</p>
 
-    <div class="teaching-grid">
+    <div class="teaching-grid teaching-grid--3">
       <div class="teaching-block reveal">
         <div class="teaching-institution">Azim Premji University</div>
-        <div class="teaching-role">Assistant Professor · Sep 2025 – Present · Bhopal</div>
+        <div class="teaching-role">Assistant Professor · 2025–2026 · Bhopal</div>
         <ul class="teaching-courses">
           <li>Field Research (M.A. Education)</li>
           <li>Child Development and Learning (M.A. Education)</li>
@@ -1643,13 +1812,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <li>Childhood Psychopathology</li>
         </ul>
       </div>
-      <div class="teaching-block reveal reveal-delay-3">
-        <div class="teaching-institution">Mentorship</div>
-        <div class="teaching-role">Dissertation Supervision</div>
-        <ul class="teaching-courses">
-          <li>Supervised 7 master's and bachelor's dissertations across topics in social cognition, developmental psychology, and neurodiversity</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -1660,14 +1822,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="section section-alt" id="recognitions">
   <div class="section-container">
     <div class="section-label reveal">Recognitions</div>
-    <h2 class="section-title reveal">Awards, fellowships &amp;<br><em>professional milestones</em></h2>
+    <h2 class="section-title reveal">Awards, fellowships &amp; <br><em>professional milestones</em></h2>
 
     <div class="awards-list">
       <div class="award-item reveal">
         <div class="award-year">2026</div>
         <div class="award-content">
-          <h3>Fulbright-Nehru Postdoctoral Fellowship <span class="award-badge">Semifinalist</span></h3>
-          <p>Government of India–U.S. academic exchange program for postdoctoral research, 2026–27 cycle.</p>
+          <h3>Fulbright-Nehru Postdoctoral Research Fellowship <span class="award-badge">Finalist</span></h3>
+          <p>Government of India–U.S. academic exchange program for postdoctoral research at the University of Virginia, 2026–27 cycle.</p>
         </div>
       </div>
       <div class="award-item reveal">
@@ -1710,36 +1872,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SERVICE
-     ═══════════════════════════════════════════ -->
-<section class="section" id="service">
-  <div class="section-container">
-    <div class="section-label reveal">Service &amp; Leadership</div>
-    <h2 class="section-title reveal">Building the <em>scholarly</em><br>community</h2>
-
-    <div class="service-grid">
-      <div class="service-card reveal">
-        <h3>Editorial Work</h3>
-        <p>Managing Editor of the Journal of Contemporary Behavioural and Social Research (Wolters Kluwer). Editorial board member for two additional journals. Peer reviewer for Springer, SAGE, and Taylor &amp; Francis.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-1">
-        <h3>Institutional Leadership</h3>
-        <p>Research Coordinator and Coordinator of International Relations at SGT University. Initiated the Friday Faculty Seminar Series. Organized workshops on grant writing, psychometric assessment, and academic publishing.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <h3>Professional Memberships</h3>
-        <p>American Psychological Association (APA). International Association for Cross-Cultural Psychology (IACCP). Active participant in international and national psychology conferences since 2022.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     BOOK A CONSULTATION
+     WORK WITH ME
      ═══════════════════════════════════════════ -->
 <section class="cta-section" id="collaborate">
   <div class="cta-container">
-    <div class="section-label reveal">Book a Consultation</div>
+    <div class="section-label reveal">Work With Me</div>
     <h2 class="section-title reveal">Work with me <em>one-on-one</em></h2>
     <p class="section-intro reveal" style="margin: 0 auto 0;">Whether you need research guidance, a keynote speaker, or expert input on child development — pick a session and book a time that works for you.</p>
 
@@ -1748,7 +1885,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <div class="cta-card-icon">🔬</div>
         <h3>Research Collaboration</h3>
         <div class="cta-card-meta">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 min</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 30 min</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l-4 4l-2-2"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Video call</span>
         </div>
         <p>Discuss potential partnerships, co-authored studies, or joint grant applications in empathy, social cognition, or neurodiversity research.</p>
@@ -1771,7 +1908,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <div class="cta-card-icon">🎓</div>
         <h3>Academic Mentorship</h3>
         <div class="cta-card-meta">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 30 min</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 30 / 60 min</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l-4 4l-2-2"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Video call</span>
         </div>
         <p>Guidance on dissertation design, publishing strategy, systematic reviews, or navigating early-career academia. For grad students and researchers.</p>
@@ -1802,25 +1939,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="contact-orb contact-orb-2"></div>
   <div class="section-container" style="position:relative; z-index:2;">
     <div class="section-label reveal">Connect</div>
-    <h2 class="section-title reveal">Let's talk about <em>research,</em><br>collaboration, or ideas</h2>
+    <h2 class="section-title reveal">Let's talk about <em>research,</em> <br>collaboration, or ideas</h2>
     <p class="section-intro reveal" style="margin-left:auto; margin-right:auto;">Whether you're a fellow researcher, a student exploring developmental psychology, or a journalist covering neurodiversity — I would love to hear from you.</p>
 
     <div class="contact-links reveal">
-      <a href="mailto:mehreen.fatima@apu.edu.in" class="contact-link">
+      <a href="mailto:contact@mehreenfatima.in" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
-        mehreen.fatima@apu.edu.in
+        contact@mehreenfatima.in
       </a>
-      <a href="https://in.linkedin.com/in/mehreen-fatima-psych" target="_blank" class="contact-link">
+      <a href="https://www.linkedin.com/in/mehreen-fatima-psych/" target="_blank" rel="noopener" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a href="#" class="contact-link">
+      <a href="https://www.researchgate.net/profile/Mehreen-Fatima-16" target="_blank" rel="noopener" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         ResearchGate
       </a>
-      <a href="#" class="contact-link">
+      <a href="https://scholar.google.com/citations?user=jGp_3bEAAAAJ&hl=en" target="_blank" rel="noopener" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         Google Scholar
+      </a>
+      <a href="https://www.instagram.com/mehreenfatima.in/" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
       </a>
     </div>
   </div>
@@ -1830,7 +1971,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
      FOOTER
      ═══════════════════════════════════════════ -->
 <footer class="footer">
-  &copy; 2026 Dr. Mehreen Fatima. Designed with care.
+  &copy; 2026 Dr. Mehreen Fatima. Designed by <a href="https://www.exinstudio.com/" target="_blank" rel="noopener" style="color: var(--accent-light); text-decoration: none; border-bottom: 1px solid rgba(228,196,143,0.3);">ExIn Studio</a>
 </footer>
 
 <!-- ═══════════════════════════════════════════
